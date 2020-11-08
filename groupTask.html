@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After School Club</title>
+    <link rel="stylesheet" type="text/css" href="afterSchool.css">
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+    <div id= "app">
+        <header>
+            <h1 v-text = "sitename"></h1>
+         </header>
+         <main>
+            <img class="lesson-logo" v-bind:src = "lesson.image"> 
+                <h2>Subject: {{lesson.subject}}</h2></h2>
+                <h3>Location: {{lesson.location}}</h3>
+                <h3>Price: {{lesson.price}}</h3>
+                <h3>Number of spaces: {{lesson.numberOfSpcaces}}</h3>
+             <button @click = "addToCart">
+                    Add to Cart
+            </button>
+        </main>
+    </div>
+    <script type="text/javascript">
+            var afterSchool = new Vue({
+                el: '#app',
+                data: {
+                    sitename: "After School Club",
+                    lesson: {
+                        id: 1001,
+                        subject: "Music",
+                        location: "Dubai",
+                        price: "200 AED",
+                        image: 'images/music.png',
+                        numberOfSpcaces: 10,
+
+                    },
+                    cart: []
+                },
+                methods:{
+
+                    addToCart: function(){
+
+                    return this.cart.push(this.lesson.id);
+                    }
+                }
+
+
+            })
+    
+    </script>
+</body>
+</html>
