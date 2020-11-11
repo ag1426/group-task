@@ -25,7 +25,7 @@
             </h2>
             <h3>Location: {{ lesson.location }}</h3>
             <h3>Price: {{ lesson.price }}</h3>
-            <h3>Number of spaces: {{ lesson.numberOfSpaces }}</h3>
+            <h3>Number of spaces: {{ lesson.numberOfSpaces-cartItemCount }}</h3>
             <button @click="addToCart" v-if="canAddToCart">
                 Add to Cart
             </button>
